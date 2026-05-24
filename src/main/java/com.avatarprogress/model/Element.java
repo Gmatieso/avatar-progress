@@ -1,4 +1,4 @@
-package com.avatarprogress.avatarprogress.model;
+package com.avatarprogress.model;
 
 public enum Element {
     FIRE,
