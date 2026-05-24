@@ -1,7 +1,10 @@
 package com.avatarprogress.model;
 
+
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Benders {
     public static final Bender AANG = new Bender(
@@ -39,6 +42,19 @@ public class Benders {
 
     public static final List<Bender> ALL = new ArrayList<>();
 
+    static  {
+        ALL.add(AANG);
+        ALL.add(KATARA);
+        ALL.add(TOPH);
+        ALL.add(ZUKO);
+    }
+
+    public static final Random RANDOM = new Random();
+
+    public static  Bender random(List<Bender> enableBenders){
+        if (enableBenders.isEmpty()) return AANG;
+        return enableBenders.get(RANDOM.nextInt(enableBenders.size()));
+    }
 
     }
 
