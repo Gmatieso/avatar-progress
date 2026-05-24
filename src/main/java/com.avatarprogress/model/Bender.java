@@ -12,13 +12,12 @@ public class Bender {
     private final Color secondaryColor;
     private  Icon cachedIcon;
 
-    public Bender(String name, Element element, String spritePath, Color primaryColor, Color secondaryColor, Icon cachedIcon) {
+    public Bender(String name, Element element, String spritePath, Color primaryColor, Color secondaryColor) {
         this.name = name;
         this.element = element;
         this.spritePath = spritePath;
         this.primaryColor = primaryColor;
         this.secondaryColor = secondaryColor;
-        this.cachedIcon = cachedIcon;
     }
 
     public String getName() {return name;}

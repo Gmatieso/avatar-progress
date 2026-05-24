@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Benders {
     public static final Bender AANG = new Bender(
-            "Aaang",
+            "Aang",
             Element.AIR,
             "/sprite/aang/walk.gif",
             new Color(0xE65100),
