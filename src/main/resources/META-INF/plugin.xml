@@ -8,22 +8,53 @@
     <name>Avatar-progress</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://github.com/Gmatieso">Gmatieso</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
+        <h2>🌊🔥🪨💨 Avatar Progress</h2>
+        <p>
+            Replaces your IDE progress bars with
+            Avatar: The Last Airbender bending animations!
+        </p>
+        <ul>
+            <li>🌊 <b>Katara</b> — Water Tribe blue</li>
+            <li>🔥 <b>Zuko</b>  — Fire Nation red</li>
+            <li>🪨 <b>Toph</b>  — Earth Kingdom green</li>
+            <li>💨 <b>Aang</b>  — Air Nomad orange</li>
+        </ul>
+        <p>Configure under
+        <b>Settings → Appearance and Behavior → Avatar Progress</b>
+        </p>
     ]]></description>
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <idea-version since-build="233"/>
+
     <depends>com.intellij.modules.platform</depends>
 
-    <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
 
+        <applicationService
+                serviceImplementation="com.avatarprogress.settings.AvatarProgressState"
+        />
+        <applicationConfigurable
+                parentId="appearance"
+                instance="com.avatarprogress.settings.AvatarProgressConfigurable"
+                id="com.avatarprogress.settings.AvatarProgressConfigurable"
+                displayName="Avatar Progress"
+        />
     </extensions>
+
+    <applicationListeners>
+        <listener
+                class="com.avatarprogress.listeners.AvatarProgressListener"
+                topic="com.intellij.ide.ui.LafManagerListener"
+        />
+
+        <listener
+                class="com.avatarprogress.listeners.AvatarProgressListener"
+                topic="com.intellij.ide.plugins.DynamicPluginListener"
+        />
+    </applicationListeners>
 </idea-plugin>
