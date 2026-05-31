@@ -3,7 +3,6 @@ package com.avatarprogress.settings;
 import com.avatarprogress.model.Bender;
 import com.avatarprogress.model.Benders;
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.util.NlsContexts;
 import org.jetbrains.annotations.Nullable;
 
