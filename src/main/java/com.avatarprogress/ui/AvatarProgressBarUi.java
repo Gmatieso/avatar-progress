@@ -66,4 +66,27 @@ public class AvatarProgressBarUi extends BasicProgressBarUI {
             g2.dispose();
         }
     }
+
+    private  void paintSprite(Graphics2D g2, int x, int y, int height) {
+        Icon icon = bender.getIcon();
+        if (icon == null) return;
+
+        int spriteW = icon.getIconWidth();
+        int spriteH = icon.getIconHeight();
+
+        float scale = (float) height / spriteH;
+        int   drawW = Math.max(1, (int)(spriteW * scale));
+        int   drawH = height;
+        int   drawX = x - drawW / 2;
+
+        Shape oldClip = g2.getClip();
+        g2.clipRect(0, y, progressBar.getWidth(), drawH);
+
+        g2.drawImage(
+                ((ImageIcon) icon).getImage(),
+                drawX, y, drawW, drawH,
+                null
+        );
+
+    }
 }
