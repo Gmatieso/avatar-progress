@@ -29,7 +29,7 @@ dependencies {
 sourceSets {
     main {
         java {
-            srcDirs("src/main/java")
+            srcDirs("src/main/java", "src/main/kotlin")
         }
         resources {
             srcDirs("src/main/resources")
@@ -50,10 +50,21 @@ intellijPlatform {
 }
 
 tasks {
-    // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "21"
         targetCompatibility = "21"
+    }
+
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "21"
+    }
+
+    buildSearchableOptions {
+        enabled = false
+    }
+
+    withType<ProcessResources> {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }
 

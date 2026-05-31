@@ -1,5 +1,4 @@
 package com.avatarprogress.settings;
-
 import com.avatarprogress.model.Bender;
 import com.avatarprogress.model.Benders;
 import com.intellij.openapi.options.Configurable;
