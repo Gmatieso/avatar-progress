@@ -34,6 +34,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+
         <applicationService
                 serviceImplementation="com.avatarprogress.settings.AvatarProgressState"
         />
