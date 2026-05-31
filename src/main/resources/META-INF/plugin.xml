@@ -47,7 +47,6 @@
     </extensions>
 
     <applicationListeners>
-
         <listener
                 class="com.avatarprogress.listeners.AvatarProgressListener"
                 topic="com.intellij.ide.ui.LafManagerListener"
@@ -57,6 +56,5 @@
                 class="com.avatarprogress.listeners.AvatarProgressListener"
                 topic="com.intellij.ide.plugins.DynamicPluginListener"
         />
-
     </applicationListeners>
 </idea-plugin>
