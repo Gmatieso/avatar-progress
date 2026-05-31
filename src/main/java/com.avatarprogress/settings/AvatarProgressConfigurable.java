@@ -123,8 +123,7 @@ public class AvatarProgressConfigurable implements Configurable {
 
     @Override
     public void apply() {
-        AvatarProgressState.State state =
-                AvatarProgressState.getInstance().getState();
+        AvatarProgressState.State state = AvatarProgressState.getInstance().getState();
         if (state == null) return;
 
         state.enabled      = enabledBox.isSelected();
