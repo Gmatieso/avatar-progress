@@ -57,4 +57,5 @@
                 topic="com.intellij.ide.plugins.DynamicPluginListener"
         />
     </applicationListeners>
+
 </idea-plugin>
