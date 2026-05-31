@@ -117,6 +117,7 @@ public class AvatarProgressConfigurable implements Configurable {
             if (benderBoxes.get(b.getName()).isSelected()
                     != s.isBenderEnabled(b.getName())) return true;
         }
+
         return false;
     }
 
