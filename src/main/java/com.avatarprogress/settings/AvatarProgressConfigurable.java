@@ -151,5 +151,4 @@ public class AvatarProgressConfigurable implements Configurable {
             if (cb != null) cb.setSelected(s.isBenderEnabled(b.getName()));
         }
     }
-
 }
