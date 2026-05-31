@@ -18,7 +18,9 @@ public class AvatarProgressListener  implements LafManagerListener, DynamicPlugi
     private  static  Object previousUi = null;
 
     public AvatarProgressListener(){
+
         swapUi();
+
     }
 
     @Override
