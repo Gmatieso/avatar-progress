@@ -36,7 +36,9 @@ public class AvatarProgressListener  implements LafManagerListener, DynamicPlugi
 
     @Override
     public void beforePluginUnload(@NotNull IdeaPluginDescriptor pluginDescriptor, boolean isUpdate) {
+
         restoreUi();
+
     }
 
     private static synchronized void swapUi() {
