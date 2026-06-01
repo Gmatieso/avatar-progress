@@ -33,7 +33,7 @@ public class Benders {
     );
 
     public static final Bender ZUKO  = new Bender(
-            "ZUKO",
+            "Zuko",
             Element.FIRE,
             "/sprite/zuko/walk.gif",
             new Color(0xB71C1C),
