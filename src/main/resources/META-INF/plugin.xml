@@ -44,7 +44,19 @@
                 id="com.avatarprogress.settings.AvatarProgressConfigurable"
                 displayName="Avatar Progress"
         />
+        <postStartupActivity
+                implementation="com.avatarprogress.listeners.AvatarProgressListener"
+        />
     </extensions>
+
+    <actions>
+        <action id="AvatarProgress.TestBar"
+                class="com.avatarprogress.actions.TestProgressBarAction"
+                text="Avatar Progress Diagnostic..."
+                description="Show raw JProgressBar to test Avatar Progress rendering">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 
     <applicationListeners>
         <listener

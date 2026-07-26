@@ -5,6 +5,7 @@ import com.avatarprogress.model.Benders;
 import com.avatarprogress.settings.AvatarProgressState;
 
 import javax.swing.*;
+import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
 import java.util.List;
@@ -12,6 +13,13 @@ import java.util.stream.Collectors;
 
 public class AvatarProgressBarUi extends BasicProgressBarUI {
     private final Bender bender;
+
+    // Swing's pluggable UI architecture looks up this exact static factory via
+    // reflection when instantiating a UIManager-registered ComponentUI delegate;
+    // without it, UIManager silently falls back to the platform default.
+    public static ComponentUI createUI(JComponent c) {
+        return new AvatarProgressBarUi();
+    }
 
     public AvatarProgressBarUi() {
         AvatarProgressState settings = AvatarProgressState.getInstance();
@@ -128,7 +136,7 @@ public class AvatarProgressBarUi extends BasicProgressBarUI {
         g2.drawImage(
                 ((ImageIcon) icon).getImage(),
                 drawX, y, drawW, drawH,
-                null
+                progressBar
         );
 
         g2.setClip(oldClip);
